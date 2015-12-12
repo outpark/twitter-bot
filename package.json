@@ -1,0 +1,21 @@
+{
+  "name": "twit",
+  "version": "1.0.0",
+  "description": "twitter bot",
+  "main": "bot.js",
+  "dependencies": {
+    "twit": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nlp",
+    "twitter",
+    "twitter",
+    "bot"
+  ],
+  "author": "outpark",
+  "license": "ISC"
+}
