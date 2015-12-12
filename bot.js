@@ -15,7 +15,7 @@ var T = new Twit({
 
 
 function retweetRecent() {
-	T.get('search/tweets', {q: "NLP OR Natural Language Processing", result_type: "recent"},
+	T.get('search/tweets', {q: "Natural Language Processing OR NLP", result_type: "recent"},
 		function (err, data, response) {
 			if(!err) {
 				var retweetID = data.statuses[0].id_str;
