@@ -35,4 +35,5 @@ function retweetRecent(param) {
 }
 	
 	retweetRecent(q1);
-	setInterval(retweetRecent, 400000);
+	setInterval(function() {retweetRecent(q1);}, 400000);
+	setInterval(function() {retweetRecent(q2);}, 1800000);
