@@ -1,5 +1,10 @@
 var Twit = require('twit');
 
+var express = require("express");
+var app = express();
+app.get('/', function(req, res){ res.send('The robot is happily running.'); });
+app.listen(process.env.PORT || 6000);
+
 
 var T = new Twit({
 	consumer_key: 'zRYzXSnoO2qmNStvB0vSzk5q2',
