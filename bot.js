@@ -25,7 +25,7 @@ function retweetRecent(param) {
 					if (response){ console.log('Retweeted Tweet ID: ' + retweetID);}
 					if (err) {
 						console.log("retweet Error: ", err);
-						retweetRecent(q2);
+						// retweetRecent(q2);
 					}
 				});
 			} else {
@@ -34,5 +34,5 @@ function retweetRecent(param) {
 		})
 }
 	
-	retweetRecent(q1);
-	setInterval(retweetRecent(q1), 300000);
+	retweetRecent(q2);
+	setInterval(retweetRecent, 400000);
