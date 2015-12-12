@@ -13,9 +13,11 @@ var T = new Twit({
 	access_token_secret: 'wno3dBzkkIHgV3qJKtlkl9cNqiOQUNF4NqjOEMGWHGhFo'
 });
 
+var q1 = "Natural Language Processing OR NLP";
+var q2 = "Speech Recognition";
 
-function retweetRecent() {
-	T.get('search/tweets', {q: "Natural Language Processing OR NLP", result_type: "recent"},
+function retweetRecent(param) {
+	T.get('search/tweets', {q: param, result_type: "recent"},
 		function (err, data, response) {
 			if(!err) {
 				var retweetID = data.statuses[0].id_str;
@@ -23,6 +25,7 @@ function retweetRecent() {
 					if (response){ console.log('Retweeted Tweet ID: ' + retweetID);}
 					if (err) {
 						console.log("retweet Error: ", err);
+						retweetRecent(q2);
 					}
 				});
 			} else {
@@ -31,5 +34,5 @@ function retweetRecent() {
 		})
 }
 	
-	retweetRecent();
-	setInterval(retweetRecent, 500000);
+	retweetRecent(q1);
+	setInterval(retweetRecent(q1), 300000);
