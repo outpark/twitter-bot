@@ -32,4 +32,4 @@ function retweetRecent() {
 }
 	
 	retweetRecent();
-	setInterval(retweetRecent, 1000000);
+	setInterval(retweetRecent, 500000);
