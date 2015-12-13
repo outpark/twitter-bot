@@ -17,8 +17,8 @@ var q1 = "Natural Language Processing OR NLP";
 var q2 = "Speech Recognition";
 var q3 = "Deep Learning";
 
+var counter = 0;
 function retweetRecent(param) {
-	var counter = 0;
 	T.get('search/tweets', {q: param, result_type: "recent"},
 		function (err, data, response) {
 			if(!err) {
@@ -27,9 +27,10 @@ function retweetRecent(param) {
 					if (response){ console.log('Retweeted Tweet ID: ' + retweetID);}
 					if (err) {
 						console.log("retweet Error: ", err);
-						while(counter <3){
-							counter++;
+						counter++;
+						if(counter == 2) {
 							retweetRecent(q3);
+							counter = 0;
 						}
 						
 					}
