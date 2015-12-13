@@ -15,6 +15,7 @@ var T = new Twit({
 
 var q1 = "Natural Language Processing OR NLP";
 var q2 = "Speech Recognition";
+var q3 = "NLP";
 
 function retweetRecent(param) {
 	T.get('search/tweets', {q: param, result_type: "recent"},
@@ -25,7 +26,7 @@ function retweetRecent(param) {
 					if (response){ console.log('Retweeted Tweet ID: ' + retweetID);}
 					if (err) {
 						console.log("retweet Error: ", err);
-						// retweetRecent(q2);
+						retweetRecent(q3);
 					}
 				});
 			} else {
