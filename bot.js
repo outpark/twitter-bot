@@ -1,16 +1,17 @@
 var Twit = require('twit');
+var Config = require('./config.js')
 
 var express = require("express");
 var app = express();
-app.get('/', function(req, res){ res.send('The robot is happily running.'); });
+app.get('/', function(req, res){ res.send('Bot is up and running!'); });
 app.listen(process.env.PORT || 3000);
 
 
 var T = new Twit({
-	consumer_key: 'zRYzXSnoO2qmNStvB0vSzk5q2',
-	consumer_secret: '4qES2oOjJgVPbQY4gpvez9ZXoXkRpwnVEG8A6SDXTZnLnMJORY',
-	access_token: '4333795461-WmVdr4o0oJMCZfBqi3Nn1wA4YsS2ukH6gwW3TOZ',
-	access_token_secret: 'wno3dBzkkIHgV3qJKtlkl9cNqiOQUNF4NqjOEMGWHGhFo'
+	consumer_key: Config.consumer_key,
+    consumer_secret: Config.consumer_secret,
+    access_token: Config.access_token,
+    access_token_secret: Config.access_token_secret
 });
 
 var q1 = "Natural Language Processing OR NLP";
