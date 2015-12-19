@@ -1,5 +1,5 @@
 var Twit = require('twit');
-var Config = require('./config.js')
+var Config = require('./config.js');
 
 var express = require("express");
 var app = express();
